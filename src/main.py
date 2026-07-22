@@ -12,8 +12,10 @@ settings = get_settings()
 
 @asynccontextmanager
 async def lifespan(_: FastAPI):
+    print("🚀 Starting up API...")
     Base.metadata.create_all(bind=engine)
     yield
+    print("🛑 Shutting down API...")
 
 app = FastAPI(title="UmaLib", lifespan=lifespan)
 app.include_router(router=horse_router)
