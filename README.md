@@ -1,4 +1,10 @@
-# UmaLib
+# UmaLib   
+![Version](https://img.shields.io/badge/version-1.0.0-blue)
+![Python](https://img.shields.io/badge/python-3.8+-green)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.138.1-009688)
+![License](https://img.shields.io/badge/license-MIT-orange)
+![Status](https://img.shields.io/badge/status-active-success)
+
 
 Simple horse management API built with FastAPI + SQLAlchemy.
 
