@@ -1,3 +1,5 @@
+from uuid import uuid4
+
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
@@ -21,7 +23,7 @@ class HorseRepository:
         return horse_by_id
     
     def create(self, payload: HorseCreateSchema):
-        new_horse = HorseORM(**payload.model_dump())
+        new_horse = HorseORM(id=str(uuid4()), **payload.model_dump())
         self.db.add(new_horse)
         self.db.commit()
         self.db.refresh(new_horse)
@@ -48,4 +50,3 @@ class HorseRepository:
         
         self.db.delete(horse_for_delete)
         self.db.commit()
-        self.db.refresh(horse_for_delete)
